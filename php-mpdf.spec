@@ -9,12 +9,12 @@
 Summary:	A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support
 Name:		php-%{pkgname}
 Version:	5.3
-Release:	0.2
+Release:	1
 License:	GPL v2
 Group:		Development/Languages/PHP
 Source0:	http://mpdf1.com/repos/download.php?file=MPDF53#/MPDF53.zip
 # Source0-md5:	db4ab1585e97b597ec35e48ee2914e29
-Patch0:	backslash-fix.patch
+Patch0:		backslash-fix.patch
 URL:		http://www.mpdf1.com/mpdf/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.461
@@ -81,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ADDED\ INFO\ FONTS.txt CHANGELOG.txt CREDITS.txt FONT\ INFO.txt README.txt
+%dir %{_appdir}
 %{_appdir}/*.php
 %{_appdir}/*.css
 %{_appdir}/classes
