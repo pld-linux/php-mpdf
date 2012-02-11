@@ -14,6 +14,7 @@ License:	GPL v2
 Group:		Development/Languages/PHP
 Source0:	http://mpdf1.com/repos/download.php?file=MPDF53#/MPDF53.zip
 # Source0-md5:	db4ab1585e97b597ec35e48ee2914e29
+Patch0:	backslash-fix.patch
 URL:		http://www.mpdf1.com/mpdf/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.461
@@ -55,8 +56,8 @@ mPDF - przykładowe programy.
 
 %prep
 %setup -q -n MPDF53
-
 %undos -f php,txt
+%patch0 -p1
 
 %{__rm} tmp/dummy.txt
 %{__rm} ttfontdata/dummy.txt

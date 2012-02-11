@@ -1,0 +1,16 @@
+backslash fix
+
+https://github.com/splitbrain/dokuwiki-plugin-dw2pdf/commit/ef508745a56a1923e4b1a52f50ab7f4e8d4020f9#mpdf/mpdf.php
+http://www.mpdf1.com/mpdf/forum/comments.php?DiscussionID=783
+https://gist.github.com/1594144
+
+--- MPDF53/mpdf.php	2012-02-11 13:11:47.046223430 +0200
++++ mpdf/mpdf.php	2012-01-30 16:26:00.000000000 +0200
+@@ -32148,6 +32148,7 @@
+ 			$temp[2][$iterator] = preg_replace('/\t/',str_repeat(" ",$tabSpaces),$temp[2][$iterator]);
+ 
+ 			$temp[2][$iterator] = preg_replace('/\n/',"<br />",$temp[2][$iterator]);
++			$temp[2][$iterator] = str_replace('\\',"\\\\",$temp[2][$iterator]);
+ 			$html = preg_replace('#<pre(.*?)>(.*?)</pre>#si','<erp'.$temp[1][$iterator].'>'.$temp[2][$iterator].'</erp>',$html,1);
+ 			$thereispre--;
+ 			$iterator++;
