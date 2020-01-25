@@ -5,7 +5,6 @@
 # - external utils/UnicodeData.txt
 %define		php_min_version 5.2.7
 %define		pkgname	mpdf
-%include	/usr/lib/rpm/macros.php
 Summary:	A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support
 Name:		php-%{pkgname}
 Version:	5.3
