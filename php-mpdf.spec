@@ -56,7 +56,7 @@ mPDF - przykładowe programy.
 %prep
 %setup -q -n MPDF53
 %undos -f php,txt
-%patch0 -p1
+%patch -P0 -p1
 
 %{__rm} tmp/dummy.txt
 %{__rm} ttfontdata/dummy.txt
